@@ -9,23 +9,97 @@
   <body>
     <header>
       <nav>
-        <ul class="wrapper">
-          <li><a href="">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact</a></li>
+        <ul class="wrapper" id="menu">
+          <li><a href="">Tab1</a></li>
+          <li><a href="">Tab2</a></li>
+          <li><a href="">Tab3</a></li>
+          <li><a href="">Tab4</a></li>
+          <li><a href="">Tab5</a></li>
+          <li><a href="">Tab6</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <h1>Main content</h1>
+      <p id="desc">Some text in button</p>
+      <div class="wrapper">
+        <button aria-describedby="desc" aria-pressed="true">Click me</button>
+        <button>Click me again</button>
+      </div>
+
+      <h2>Tablist</h2>
+      <div class="tablist" role="tablist" aria-label="Sample Tabs">
+        <button
+          id="tab1"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel1"
+          tabindex="0"
+        >
+          Tab 1
+        </button>
+        <button
+          id="tab2"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel2"
+          tabindex="-1"
+        >
+          Tab 2
+        </button>
+        <button
+          id="tab3"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel3"
+          tabindex="-1"
+        >
+          Tab 3
+        </button>
+
+        <div id="panel1" role="tabpanel" aria-labelledby="tab1" tabindex="0">
+          Content 1
+        </div>
+        <div
+          id="panel2"
+          role="tabpanel"
+          aria-labelledby="tab2"
+          tabindex="0"
+          hidden
+        >
+          Content 2
+        </div>
+        <div
+          id="panel3"
+          role="tabpanel"
+          aria-labelledby="tab3"
+          tabindex="0"
+          hidden
+        >
+          Content 3
+        </div>
+      </div>
+
+      <h2>Modal</h2>
+      <button id="openModal" aria-controls="modal" aria-expanded="false">
+        Open modal
+      </button>
+      <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+          <button class="close-btn" aria-label="Close modal">&times;</button>
+          <p id="modalText">Some text</p>
+          <button>Some button 1</button>
+          <button>Some button 2</button>
+        </div>
+      </div>
     </main>
 
     <footer>
       <p>Footer</p>
+      <img src="" alt="" />
     </footer>
 
-    <script src="./jquery-3.7.1.min.js"></script>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
